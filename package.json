@@ -1,0 +1,13 @@
+{
+  "name": "es-async",
+  "description": "Slides and examples for my speech",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MishaMykhalyuk/es-async.git"
+  },
+  "author": "Misha Mykhalyuk",
+  "license": "ISC",
+  "dependencies": {
+    "shower": "^2.1.4"
+  }
+}
