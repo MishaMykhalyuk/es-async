@@ -22,3 +22,16 @@
 	height: 100%;
 	width: 100%;
 }
+
+.slide .shout{
+	line-height: 1.4em;
+}
+
+.slide .shout.middle{
+	font-size: 90px;
+}
+
+.quote{
+	font-size: 60px;
+    color: #585a5e;
+}
