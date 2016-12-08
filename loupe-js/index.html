@@ -1,0 +1,18 @@
+<!doctype html>
+<head>
+  <link href='loupe.bundle.css' rel='stylesheet' />
+</head>
+<body>
+  <script>
+    function a() { b(); }
+    function b() { c(); }
+    function c() { d(); }
+    function d() { console.log('hi'); }
+    document.body.addEventListener('click', function () {
+      setTimeout(function () {
+        a();
+      }, 1000);
+    });
+  </script>
+  <script src='loupe.bundle.js'></script>
+</body>
