@@ -1,3 +1,7 @@
+section.slide{
+	padding-top: 50px;
+}
+
 .cover h2 {
 	margin: 50px 0 0;
 	text-align:center;
@@ -28,7 +32,7 @@
 }
 
 .slide .shout.middle{
-	font-size: 90px;
+	font-size: 70px;
 }
 
 .quote{
