@@ -91,3 +91,47 @@ section.slide{
     margin: 0;
     height: 60px;
 }
+
+.outer{
+	height: 320px;
+	width: 480px;
+}
+
+.inner{
+	height: 95%;
+    width: 95%;
+    border: solid;
+    display: flex;
+    margin: auto;
+}
+
+.exceeded{
+	position: absolute;
+    top: 220px;
+    left: 200px;
+}
+
+.exceeded code:before{
+	display: none;
+}
+
+.exec{
+	position: absolute;
+    right: 60px;
+    width: 280px;
+    height: 60px;
+    background-color: #FFCA28;
+}
+
+.exec p {
+	text-align: center;
+}
+
+.exceeded-err{
+	position: absolute;
+    height: 42px;
+    width: 974px;
+    left: 50%;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0);
+}

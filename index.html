@@ -449,10 +449,77 @@
 		</div>
 	</section>
 
-	<section class="slide white">
-		<h2>Call stack (exceeded)</h2>
-	</section>
+	<section class="slide white middle-padding">
+		<h2>Call stack</h2>
 
+		<div class="justify-double">
+
+			<div>
+				<div class="code">
+					<div class="outer">
+						<div class="inner next">
+							<div class="exec" style="bottom: 64px">
+								<p>foo()</p>
+							</div>
+							<div class="inner next">
+								<div class="exec" style="bottom: 130px">
+									<p>foo()</p>
+								</div>
+								<div class="inner next">
+									<div class="exec" style="bottom: 196px">
+										<p>foo()</p>
+									</div>
+									<div class="inner next">
+										<div class="exec" style="bottom: 262px">
+											<p>foo()</p>
+										</div>
+										<div class="inner next">
+											<div class="exec" style="bottom: 328px">
+												<p>foo()</p>
+											</div>
+											<div class="inner next">
+												<div class="exec" style="bottom: 394px">
+													<p>foo()</p>
+												</div>
+												<div class="inner next">
+													<div class="exec" style="bottom: 462px">
+														<p>foo()</p>
+													</div>
+													<div class="inner next">
+															<div class="exec" style="bottom: 528px">
+														<p>foo()</p>
+													</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<pre class="exceeded">
+						<div>					
+							<code>function foo() {</code>
+							<code>	return foo();</code>
+							<code>}</code>
+						</div>
+					</pre>
+					<pre style="position: absolute; left: 200px;">
+						<code>foo();</code>
+					</pre>
+
+					<img class="next exceeded-err" src="./media/exceeded.png">
+			</div>
+			</div>
+
+			<div class="stack">
+				<h3>stack</h3>
+				<div class="stack-box"></div>
+			</div>
+		</div>
+	</section>
 	<section class="slide white">
 		<h2>Blocking</h2>
 	</section>
