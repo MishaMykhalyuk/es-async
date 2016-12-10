@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
 	<title>ES async programming</title>
 	<link rel="stylesheet" href="node_modules/shower-ribbon/styles/screen-16x10.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
 	<link rel="stylesheet" href="styles.css">
 </head>
 <body class="shower list">
@@ -28,12 +29,149 @@
 
 	<section class="slide white">
 		<h2>How does JavaScript actually work?</h2>
-		<img src="./media/javascript.png" style="margin: auto; display: block; width: 650px;">
+		<img src="./media/js.png" style="margin: auto; display: block; width: 800px;">
 	</section>
 
 
+	<section class="slide white middle-padding">
+		<h2>Call stack</h2>
+
+		<div class="justify-double">
+			<div class="code">
+				<pre>
+					<div>					
+						<code>function multiply(a, b) {</code>
+						<code>	return a * b;</code>
+						<code>}</code>
+					</div>
+					<div>						
+						<code>function square(n) {</code>
+						<code>	return n * n;</code>
+						<code>}</code>
+					</div>
+					<div>					
+						<code>function printSquare(n) {</code>
+						<code>  const squared = square(n);</code>
+						<code>  console.log(scuared)</code>
+						<code>}</code>
+					</div>
+					<code>printSquare(4);</code>
+				</pre>
+			</div>
+			<div class="stack">
+				<h3>stack</h3>
+				<div class="stack-box">
+					
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="slide white middle-padding">
+		<h2>Call stack</h2>
+
+		<div class="justify-double">
+			<div class="code">
+				<pre>
+					<div>					
+						<code>function multiply(a, b) {</code>
+						<code>	return a * b;</code>
+						<code>}</code>
+					</div>
+					<div>						
+						<code>function square(n) {</code>
+						<code>	return n * n;</code>
+						<code>}</code>
+					</div>
+					<div class="processing-code">					
+						<code>function printSquare(n) {</code>
+						<code>  const squared = square(n);</code>
+						<code>  console.log(scuared)</code>
+						<code>}</code>
+					</div>
+					<code>printSquare(4);</code>
+				</pre>
+			</div>
+			<div class="stack">
+				<h3>stack</h3>
+				<div class="stack-box">
+					<p>1</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="slide white middle-padding">
+		<h2>Call stack</h2>
+
+		<div class="justify-double">
+			<div class="code">
+				<pre>
+					<div>					
+						<code>function multiply(a, b) {</code>
+						<code>	return a * b;</code>
+						<code>}</code>
+					</div>
+					<div class="processing-code">
+						<code>function square(n) {</code>
+						<code>	return n * n;</code>
+						<code>}</code>
+					</div>
+					<div class="processing-code">					
+						<code>function printSquare(n) {</code>
+						<code>  const squared = square(n);</code>
+						<code>  console.log(scuared)</code>
+						<code>}</code>
+					</div>
+					<code>printSquare(4);</code>
+				</pre>
+			</div>
+			<div class="stack">
+				<h3>stack</h3>
+				<div class="stack-box">
+					<p>2</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="slide white middle-padding">
+		<h2>Call stack</h2>
+
+		<div class="justify-double">
+			<div class="code">
+				<pre>
+					<div class="processing-code">					
+						<code>function multiply(a, b) {</code>
+						<code>	return a * b;</code>
+						<code>}</code>
+					</div>
+					<div class="processing-code">
+						<code>function square(n) {</code>
+						<code>	return n * n;</code>
+						<code>}</code>
+					</div>
+					<div class="processing-code">					
+						<code>function printSquare(n) {</code>
+						<code>  const squared = square(n);</code>
+						<code>  console.log(scuared)</code>
+						<code>}</code>
+					</div>
+					<code>printSquare(4);</code>
+				</pre>
+			</div>
+			<div class="stack">
+				<h3>stack</h3>
+				<div class="stack-box">
+					<p>3</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
 	<section class="slide white">
-		<h2>Call stack ()</h2>
+		<h2>Call stack</h2>
+
 	</section>
 
 	<section class="slide white">
@@ -69,5 +207,7 @@
 	</section>
 
 	<script src="node_modules/shower-core/shower.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
 </body>
 </html>

@@ -39,3 +39,41 @@ section.slide{
 	font-size: 60px;
     color: #585a5e;
 }
+
+.justify-double{
+	display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.slide .code code{
+	font-size: 24px;
+	line-height: 40px;
+}
+
+.stack{
+	width: 300px;
+}
+
+.stack h3{
+	text-align: center;
+}
+
+.stack-box{
+	height: 430px;
+    width: 100%;
+    border: solid;
+}
+
+.middle-padding{
+	padding-left: 80px;
+    padding-right: 50px;
+}
+
+.processing-code{
+	background-color: #B0BEC5;
+}
+
+.code pre div{
+	margin: 5px 0;
+}
