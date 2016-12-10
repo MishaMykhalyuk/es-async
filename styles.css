@@ -60,9 +60,11 @@ section.slide{
 }
 
 .stack-box{
-	height: 430px;
+	height: 400px;
     width: 100%;
     border: solid;
+    display: flex;
+    flex-direction: column-reverse;
 }
 
 .middle-padding{
@@ -76,4 +78,16 @@ section.slide{
 
 .code pre div{
 	margin: 5px 0;
+}
+
+.execution-block{
+	width: 95%;
+    margin: 5px auto;
+    background-color: #FFCA28;
+}
+
+.execution-block p{
+	text-align: center;
+    margin: 0;
+    height: 60px;
 }
