@@ -425,13 +425,28 @@
 		</div>
 	</section>
 
-	<section class="slide white">
+	<section class="slide white middle-padding">
 		<h2>Call stack</h2>
 
-	</section>
-
-	<section class="slide white">
-		<h2>Call stack (error)</h2>
+		<div class="justify-double">
+			<div class="code">
+				<pre>
+					<code>function foo() {</code>
+					<code>	throw new Error('Oops!');</code>
+					<code>}</code>
+					<code>function bar() {</code>
+					<code>	foo();</code>
+					<code>}</code>
+					<code>function baz() {</code>
+					<code>  bar();</code>
+					<code>}</code>
+					<code>baz();</code>
+				</pre>
+			</div>
+			<div style="display: flex;">
+				<img src="./media/err.png" style="margin: auto; height: 100px width: 490px">
+			</div>
+		</div>
 	</section>
 
 	<section class="slide white">
