@@ -682,7 +682,17 @@
 	</section>
 
 	<section class="slide white">
-		
+		<pre>
+			<code><mark>async</mark> function () {</code>
+			<code>  try {</code>
+			<code>    const str = <mark>await</mark> read(‘secret-passwords.txt’);</code>
+			<code>    str = str.replace(‘qwerty’, ‘123456’);</code>
+			<code>    <mark>await</mark> write(‘new-passwords.txt’, str);</code>
+			<code>  } catch (error) {</code>
+			<code>    //error handling</code>
+			<code>  }</code>
+			<code>};</code>
+		</pre>
 	</section>
 
 	<section class="slide white full">
