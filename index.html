@@ -655,8 +655,8 @@
 	<section class="slide white">
 		<h2>Coroutines</h2>
 		<pre>
-			<code>co(<mark>function*</mark>() {</code>
-			<code>  var str = <mark>yield</mark> read(‘secret-passwords.txt’);</code>
+			<code>co(<mark>function*</mark> () {</code>
+			<code>  const str = <mark>yield</mark> read(‘secret-passwords.txt’);</code>
 			<code>  str = str.replace(‘qwerty’, ‘123456’);</code>
 			<code>  <mark>yield</mark> write(‘new-passwords.txt’, str);</code>
 			<code>});</code>
@@ -664,7 +664,21 @@
 	</section>
 
 	<section class="slide white">
-		
+		<h2 class="shout">async/await</h2>
+	</section>
+
+	<section class="slide white">
+		<pre>
+			<code><mark>async</mark> function () {</code>
+			<code>  const str = <mark>await</mark> read(‘secret-passwords.txt’);</code>
+			<code>  str = str.replace(‘qwerty’, ‘123456’);</code>
+			<code>  <mark>await</mark> write(‘new-passwords.txt’, str);</code>
+			<code>};</code>
+		</pre>
+	</section>
+
+	<section class="slide white">
+		<img src="./media/try_catch.png" class="cover w">
 	</section>
 
 	<section class="slide white">
