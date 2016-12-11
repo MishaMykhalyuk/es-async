@@ -135,3 +135,13 @@ section.slide{
     top: 50%;
     transform: translate3d(-50%, -50%, 0);
 }
+
+.slide .code-style pre code{
+	font-size: 17px;
+	padding: 0 80px;
+}
+
+.slide .code-style pre code:before{
+	display: none;
+}
+

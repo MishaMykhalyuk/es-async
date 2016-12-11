@@ -570,9 +570,56 @@
 	</section>
 
 	<section class="slide white">
-		<img src="./media/fox-stuck.jpg" class="cover w">
+		<img src="./media/callback.gif" class="cover w">
 	</section>
 
+	<section class="slide white">
+		<h2 class="shout middle">Promises</h2>
+	</section>
+
+	<section class="slide white">
+		<div class="justify-double code-style">
+		<div>
+			<p>Callback</p>			
+			<pre>
+				<code>createUser(name, function () {  </code>
+				<code> getFriends(name, function (friends) {</code>
+				<code>  if (friends) {</code>
+				<code>   invite(friends, function (invites) {</code>
+				<code>    // ad infinitum</code>
+				<code>   });</code>
+				<code>  };</code>
+				<code> });</code>
+				<code>});</code>
+			</pre>
+		</div>
+		<div>
+			<p>Promise</p>
+			<pre>
+				<code>createUser(name)  </code>
+				<code>  .then(getFriends)</code>
+				<code>  .then(function (friends) {</code>
+				<code>    if (friends) {</code>
+				<code>      return invite(friends);</code>
+				<code>    } else {</code>
+				<code>      throw new Error('No friends to invite');</code>
+				<code>    }</code>
+				<code>  })</code>
+				<code>  .catch(displayError);</code>
+			</pre>
+		</div>
+		</div>
+	</section>
+
+ 	<section class="slide white">
+	 	<h2>Promise chaining</h2>
+		<pre>
+				<code>createUser(name)  </code>
+				<code>  .then(getFriends)</code>
+				<code>  .then(invite)</code>
+				<code>  .catch(displayError);</code>
+			</pre>
+	</section>
 
  	<section class="slide white full">
 		<!-- <iframe class="loup" src="./loupe-js/index.html"></iframe> -->
