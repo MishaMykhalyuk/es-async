@@ -672,9 +672,9 @@
 			<code>  return 3;</code>
 			<code>}</code>
 			<code>const iterator = numbers();</code>
-			<code>iterator.next(); <mark class="comment">// 1</mark></code>
-			<code>iterator.next(); <mark class="comment">// 2</mark></code>
-			<code>iterator.next(); <mark class="comment">// 3</mark></code>
+			<code class="next">iterator.next(); <mark class="comment">// {value: 1, done: false}</mark></code>
+			<code class="next">iterator.next(); <mark class="comment">// {value: 2, done: false}</mark></code>
+			<code class="next">iterator.next(); <mark class="comment">// {value: 3, done: true}</mark></code>
 		</pre>
 	</section>
 
@@ -685,7 +685,8 @@
 			<code>  const str = <mark>yield</mark> read(‘secret-passwords.txt’);</code>
 			<code>  str = str.replace(‘qwerty’, ‘123456’);</code>
 			<code>  <mark>yield</mark> write(‘new-passwords.txt’, str);</code>
-			<code>});</code>
+			<code>})</code>
+			<code>.catch(err => handleError(err));</code>
 		</pre>
 	</section>
 
