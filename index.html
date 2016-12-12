@@ -690,6 +690,20 @@
 	</section>
 
 	<section class="slide white">
+		<h2>Coroutines</h2>
+		<pre>
+			<code>co(function*() {</code>
+			<code>  const {user1, user2, user3} = <mark>yield</mark> {</code>
+			<code>    user1: user.findAsync({name: "Will"}),</code>
+			<code>    user2: user.findAsync({name: "Adam"}),</code>
+			<code>    user3: user.findAsync({name: "Ben"})</code>
+			<code>  };</code>
+			<code>})</code>
+			<code>.catch(err => handleError(err))</code>
+		</pre>
+	</section>
+
+	<section class="slide white">
 		<h2 class="shout">async/await</h2>
 	</section>
 
