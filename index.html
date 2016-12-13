@@ -665,6 +665,13 @@
 	</section>
 
 	<section class="slide white">
+		<h2>Symbol.iterator</h2>
+		<pre>
+			<code>const { value, done } = syncIterator.next();</code>
+		</pre>
+	</section>
+
+	<section class="slide white">
 		<pre>
 			<code>function* numbers() {</code>
 			<code>  yield 1;</code>
@@ -737,6 +744,32 @@
 			<code>    //error handling</code>
 			<code>  }</code>
 			<code>};</code>
+		</pre>
+	</section>
+
+	<section class="slide white">
+		<h2 class="shout">async iteration</h2>
+	</section>
+
+	<section class="slide white">
+		<h2>Symbol.asyncIterator</h2>
+		<pre>
+			<code>asyncIterator.next()</code>
+			<code>  .then(({ value, done }) => /* ... */);</code>
+		</pre>
+	</section>
+
+	<section class="slide white">
+		<pre>
+			<code><mark>async</mark> function* getCompanies() {</code>
+			<code>  for (let name of ['Foo', 'Bar', 'Baz']) {</code>
+			<code>    const profile = <mark>await</mark> get(`/users/${name}`);</code>
+			<code>    <mark>yield</mark> profile.company;</code>
+			<code>  }</code>
+			<code>}</code>
+			<code><mark>for await</mark> (let company of getCompanies()) {</code>
+			<code>  console.log(company);</code>
+			<code>}</code>
 		</pre>
 	</section>
 
