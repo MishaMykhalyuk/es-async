@@ -583,9 +583,19 @@
 		<img src="./media/js.png" style="margin: auto; display: block; width: 800px;">
 	</section>
 
-	<section class="slide white">
-		<h2>Loupe (async)</h2>
-	</section>
+	<section class="slide white loupe">
+		<div>
+			<img src="./media/1.png">
+			<img class="next" src="./media/2.png">
+			<img class="next" src="./media/3.png">
+			<img class="next" src="./media/4.png">
+			<img class="next" src="./media/5.png">
+			<img class="next" src="./media/6.png">
+			<img class="next" src="./media/7.png">
+			<img class="next" src="./media/8.png">
+			<img class="next" src="./media/9.png">
+		</div>
+</section>
 
 	<section class="slide white">
 		<h2 class="shout middle">How do we do it?</h2>
@@ -777,8 +787,39 @@
 		<h2 class="shout" style="font-size: 100px">ECMAScript Observable</h2>
 	</section>
 
+	<section class="slide white">
+		<pre>
+			<code>function listen (element, eventName) {</code>
+			<code>  return new Observable(observer => {</code>
+			<code>      const handler = event => observer.next(event);</code>
+			<code>      element.addEventListener(eventName, handler);</code>
+			<code>      return () => {</code>
+			<code>          element.removeEventListener(eventName, handler);</code>
+			<code>      };</code>
+			<code>  });</code>
+			<code>}</code>
+		</pre>
+	</section>
+
+	<section class="slide white">
+		<pre>
+			<code>function keyEventsStream (element) {</code>
+			<code>  return listen(element, 'keydown')</code>
+			<code>    <span class="hljs-keyword">.filter</span>(event => {...})</code>
+			<code>    <span class="hljs-keyword">.map</span>(event => {...})</code>
+			<code>}</code>
+
+			<code><span class="hljs-keyword">const</span> subscription = keyEventsStream(inputElement)</code>
+			<code>  <span class="hljs-keyword">.subscribe</span>({</code>
+			<code>    <span class="hljs-keyword">next</span>(val) {...},</code>
+			<code>    <span class="hljs-keyword">error</span>(err) {...},</code>
+			<code>    <span class="hljs-keyword">complete</span>() {...}</code>
+			<code>  });</code>
+		</pre>
+	</section>
+
 	<section class="slide white full">
-		<!-- <iframe class="loup" src="./loupe-js/index.html"></iframe> -->
+
 	</section>
 
 	<script src="node_modules/shower-core/shower.min.js"></script>

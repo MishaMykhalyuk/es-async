@@ -145,3 +145,17 @@ section.slide{
 	display: none;
 }
 
+.loupe div{
+    position: relative;
+    height: 560px;
+    width: 880px;
+    overflow: hidden;
+}
+
+.loupe img{
+	height: 100%;
+    width: 100%;
+    position: absolute;
+    left: -4px;
+    top: -4px
+}
