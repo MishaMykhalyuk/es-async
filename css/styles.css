@@ -120,7 +120,7 @@ section.slide{
 	position: absolute;
     right: 60px;
     width: 280px;
-    height: 60px;
+    height: 70px;
     background-color: #FFCA28;
 }
 
@@ -167,4 +167,9 @@ section.slide{
 
 .def.next.active{
 	display: block;
+}
+
+.light{
+	font-size: 40px;
+	font-weight: 200;
 }
