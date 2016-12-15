@@ -549,6 +549,8 @@
 
 	<section class="slide white">
 		<h2>Blocking</h2>
+		<p>What happens when things are slow?</p>
+		<img src="./media/spinner.gif" style="margin: auto; display: block;" height="192" width="192">
 	</section>
 
 	<section class="slide white">
@@ -633,15 +635,15 @@
 			<p>Promise</p>
 			<pre>
 				<code>createUser(name)  </code>
-				<code>  .then(getFriends)</code>
-				<code>  .then(function (friends) {</code>
+				<code>  <span class="hljs-keyword">.then</span>(getFriends)</code>
+				<code>  <span class="hljs-keyword">.then</span>(function (friends) {</code>
 				<code>    if (friends) {</code>
 				<code>      return invite(friends);</code>
 				<code>    } else {</code>
 				<code>      throw new Error('No friends to invite');</code>
 				<code>    }</code>
 				<code>  })</code>
-				<code>  .catch(displayError);</code>
+				<code>  <span class="hljs-keyword">.catch</span>(displayError);</code>
 			</pre>
 		</div>
 		</div>
@@ -672,6 +674,7 @@
 
 	<section class="slide white">
 		<p><i>"<b>Генератори</b> - співпрограми першого класу, що представляють із себе об'єкти, інкапсулюючі відкладені контексти виконання"</i></p>
+		<img class="next" src="./media/what.png" style="margin: auto; display: block; width: 400px; border-radius: 50%">
 	</section>
 
 	<section class="slide white">
@@ -784,13 +787,17 @@
 	</section>
 
 	<section class="slide white">
+		<h2 class="shout" style="font-size: 100px">Rx ?</h2>
+	</section>
+
+	<section class="slide white">
 		<h2 class="shout" style="font-size: 100px">ECMAScript Observable</h2>
 	</section>
 
 	<section class="slide white">
 		<pre>
 			<code>function listen (element, eventName) {</code>
-			<code>  return new Observable(observer => {</code>
+			<code>  return new <mark>Observable</mark> (observer => {</code>
 			<code>      const handler = event => observer.next(event);</code>
 			<code>      element.addEventListener(eventName, handler);</code>
 			<code>      return () => {</code>
