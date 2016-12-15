@@ -89,10 +89,6 @@ module.exports = React.createClass({
             return (
                 <div className="flexChild columnParent">
                     <div className='editor-switch'>
-                        <button onClick={this.onEditFocus}>Edit</button>
-                        <button onClick={this.runCode}>Rerun</button>
-                        <button onClick={this.pauseCode}>Pause</button>
-                        <button onClick={this.resumeCode}>Resume</button>
                     </div>
                     <div
                       className="editor flexChild"

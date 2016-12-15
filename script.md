@@ -1,3 +1,16 @@
+#JavaScript Engine
+
+There are actually several different implementations of JavaScript engines but by far the most popular version is Google Chrome’s V8 engine (which is not limited to the browser but also exists in the server via NodeJS). But what exactly does the JavaScript Engine do? Well, it’s actually quite simple — it’s job is to go through all the lines of JavaScript in an application and process them one at a time. That’s right — one at a time, meaning that JavaScript is single-threaded. The main repercussion of this is that if you’re running a line of JavaScript that happens to take a longggggg time to return, then all the code after that will be blocked. And we don’t want to write code that’s blocking — especially on the browser. Imagine that you’re on a web site and click on a button … and then it just hangs there. You try clicking on other buttons but nope, nothing happens. The most likely culprit of this (assuming no bugs) is the button click triggered some JavaScript code to execute but it’s blocking.
+
+#Callbacks
+The real problem with callbacks it that they deprive us of keywords like return and throw. Instead, our program's entire flow is based on side effects: one function incidentally calling another one.
+
+And in fact, callbacks do something even more sinister: they deprive us of the stack, which is something we usually take for granted in programming languages. Writing code without a stack is a lot like driving a car without a brake pedal: you don't realize how badly you need it, until you reach for it and it's not there.
+
+The whole point of promises is to give us back the language fundamentals we lost when we went async: return, throw, and the stack. But you have to know how to use promises correctly in order to take advantage of them.
+
+The following code will throw an uncaughtException and there is no way to catch it. Even if core were to delegate this exception back to the callee this is potentially error-prone, as multiple callbacks have undefined behaviours.
+
 # Generators
 However, we wouldn’t want to use generators alone in production code because they forces us to reason about a process over time. And each time we call next, we jump back to our generator like a GOTO statement.
 
