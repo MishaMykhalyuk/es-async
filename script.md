@@ -1,6 +1,16 @@
+http://2014.jsconf.eu/speakers/philip-roberts-what-the-heck-is-the-event-loop-anyway.html
+
 #JavaScript Engine
 
 There are actually several different implementations of JavaScript engines but by far the most popular version is Google Chrome’s V8 engine (which is not limited to the browser but also exists in the server via NodeJS). But what exactly does the JavaScript Engine do? Well, it’s actually quite simple — it’s job is to go through all the lines of JavaScript in an application and process them one at a time. That’s right — one at a time, meaning that JavaScript is single-threaded. The main repercussion of this is that if you’re running a line of JavaScript that happens to take a longggggg time to return, then all the code after that will be blocked. And we don’t want to write code that’s blocking — especially on the browser. Imagine that you’re on a web site and click on a button … and then it just hangs there. You try clicking on other buttons but nope, nothing happens. The most likely culprit of this (assuming no bugs) is the button click triggered some JavaScript code to execute but it’s blocking.
+
+
+#Call stack
+
+So how does javascript engine know how to process a single line of javascript at a time?
+
+It uses a Call Stack. Call Stack is like a shopping bag, the first item that enters in the shopping bag is the last item to exit and vice-versa. Javascript engine adds all line in call stack and executed it in LIFO method (Last in First Out). In short call stack is a data structure that records and identifies where we are in the program.
+
 
 #Callbacks
 The real problem with callbacks it that they deprive us of keywords like return and throw. Instead, our program's entire flow is based on side effects: one function incidentally calling another one.
@@ -19,3 +29,7 @@ Coroutines understand this and remedy this situation by wrapping a generator and
 Iterators are a special kind of behavior, a design pattern actually, where we step through an ordered set of values one at a time by calling next().
 
 The iterator interface (introduced in ECMAScript 2015) is a sequential data access protocol which enables the development of generic and composable data consumers and transformers. Their primary interface is a next() method which returns a { value, done } tuple, where done is a boolean indicating whether the end of the iterator has been reached, and value is the yielded value in the sequence.
+
+
+#Async iterator
+While many data sources encountered by the JavaScript programmer are synchronous (such as in-memory lists and other data structures), many others are not. For instance, any data source which requires I/O access will be typically represented using a event-based or streaming asynchronous API. Unfortunately, iterators cannot be used to represent such data sources.
