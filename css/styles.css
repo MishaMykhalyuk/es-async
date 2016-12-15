@@ -160,3 +160,11 @@ section.slide{
     left: -4px;
     top: -4px
 }
+
+.def {
+	display: none;
+}
+
+.def.next.active{
+	display: block;
+}
