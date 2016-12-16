@@ -38,13 +38,13 @@ section.slide{
 
 .quote{
 	font-size: 60px;
-    color: #585a5e;
+	color: #585a5e;
 }
 
 .justify-double{
 	display: flex;
-    width: 100%;
-    justify-content: space-between;
+	width: 100%;
+	justify-content: space-between;
 }
 
 .slide .code code{
@@ -62,15 +62,15 @@ section.slide{
 
 .stack-box{
 	height: 400px;
-    width: 100%;
-    border: solid;
-    display: flex;
-    flex-direction: column-reverse;
+	width: 100%;
+	border: solid;
+	display: flex;
+	flex-direction: column-reverse;
 }
 
 .middle-padding{
 	padding-left: 80px;
-    padding-right: 50px;
+	padding-right: 50px;
 }
 
 .processing-code{
@@ -83,14 +83,14 @@ section.slide{
 
 .execution-block{
 	width: 95%;
-    margin: 5px auto;
-    background-color: #FFCA28;
+	margin: 5px auto;
+	background-color: #FFCA28;
 }
 
 .execution-block p{
 	text-align: center;
-    margin: 0;
-    height: 60px;
+	margin: 0;
+	height: 60px;
 }
 
 .outer{
@@ -100,16 +100,16 @@ section.slide{
 
 .inner{
 	height: 95%;
-    width: 95%;
-    border: solid;
-    display: flex;
-    margin: auto;
+	width: 95%;
+	border: solid;
+	display: flex;
+	margin: auto;
 }
 
 .exceeded{
 	position: absolute;
-    top: 220px;
-    left: 200px;
+	top: 220px;
+	left: 200px;
 }
 
 .exceeded code:before{
@@ -118,10 +118,10 @@ section.slide{
 
 .exec{
 	position: absolute;
-    right: 60px;
-    width: 280px;
-    height: 70px;
-    background-color: #FFCA28;
+	right: 60px;
+	width: 280px;
+	height: 70px;
+	background-color: #FFCA28;
 }
 
 .exec p {
@@ -130,11 +130,11 @@ section.slide{
 
 .exceeded-err{
 	position: absolute;
-    height: 42px;
-    width: 974px;
-    left: 50%;
-    top: 50%;
-    transform: translate3d(-50%, -50%, 0);
+	height: 42px;
+	width: 974px;
+	left: 50%;
+	top: 50%;
+	transform: translate3d(-50%, -50%, 0);
 }
 
 .slide .code-style pre code{
@@ -147,18 +147,18 @@ section.slide{
 }
 
 .loupe div{
-    position: relative;
-    height: 560px;
-    width: 880px;
-    overflow: hidden;
+	position: relative;
+	height: 560px;
+	width: 880px;
+	overflow: hidden;
 }
 
 .loupe img{
 	height: 100%;
-    width: 100%;
-    position: absolute;
-    left: -4px;
-    top: -4px
+	width: 100%;
+	position: absolute;
+	left: -4px;
+	top: -4px
 }
 
 .def {

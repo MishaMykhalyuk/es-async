@@ -33,3 +33,14 @@ The iterator interface (introduced in ECMAScript 2015) is a sequential data acce
 
 #Async iterator
 While many data sources encountered by the JavaScript programmer are synchronous (such as in-memory lists and other data structures), many others are not. For instance, any data source which requires I/O access will be typically represented using a event-based or streaming asynchronous API. Unfortunately, iterators cannot be used to represent such data sources.
+
+
+#Introducing Observable
+
+If a generator function modifies a function and causes it to return multiple values and the async modifier causes functions to push their values, an asynchronous generator function must push multiple values. What data type fits this description?
+
+ES6 introduces the Generator interface, which is a combination of two different interfaces:
+
+- Iterator
+- Observer
+The Iterator is a data source that can return a value, an error (via throw), or a final value (value where IterationResult::done).
