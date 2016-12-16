@@ -676,6 +676,51 @@
 	</section>
 
 	<section class="slide white">
+		<pre>
+			<code>get('/resources', (resources) => {</code>
+			<code>  renderResources(resources);</code>
+			<code>});</code>
+		</pre>
+
+		<pre>
+			<code>get('/resources')<mark>.then(</mark>(resources) => {</code>
+			<code>  renderResources(resources);</code>
+			<code>});</code>
+		</pre>
+	</section>
+
+	<section class="slide white">
+		<h2 class="shout middle">New syntax</h2>
+	</section>
+
+	<section class="slide white">
+		<pre>
+			<code>function main() {</code>
+			<code>  try {</code>
+			<code>    let <mark>resources</mark> = getResources();</code>
+			<code>    render(resources);</code>
+			<code>  } catch (<mark>error</mark>) {</code>
+			<code>  <mark class="comment">  // wow</mark></code>
+			<code>  }</code>
+			<code>}</code>
+		</pre>
+	</section>
+
+	<section class="slide white">
+		<pre>
+			<code>function main() {</code>
+			<code>  getResources()</code>
+			<code>    .then((<mark>resources</mark>) => {</code>
+			<code>      render(resources);</code>
+			<code>    })</code>
+			<code>    .catch((<mark>error</mark>) => {</code>
+			<code>  <mark class="comment">    // wow</mark></code>
+			<code>    })</code>
+			<code>}</code>
+		</pre>
+	</section>
+
+	<section class="slide white">
 		<h2>Promise chaining</h2>
 		<pre>
 				<code>createUser(name)  </code>
