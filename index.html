@@ -28,6 +28,10 @@
 	</section>
 
 	<section class="slide white">
+		<img src="./media/bear-thoughts.jpg" class="cover w">
+	</section>
+
+	<section class="slide white">
 		<h2 class="shout middle">JavaScript, what are you?</h2>
 	</section>
 
@@ -40,7 +44,11 @@
 	</section>
 
 	<section class="slide white">
-		<h2 class="shout middle"><span class="light">Hey v8, you have <br /> a </span>call stack <br /><span class="light">an</span> event loop<br /> <span class="light">a</span> callback queue <br /> <span class="light">some other</span> APIs <span class="light">?</span></h2>
+		<img src="./media/v8.png" style="margin: auto; display: block; width: 500px;">
+	</section>	
+
+	<section class="slide white">
+		<h2 class="shout middle"><span class="light">Hey v8, do you have <br /> a </span>call stack <br /><span class="light">an</span> event loop<br /> <span class="light">a</span> callback queue <br /> <span class="light">some other</span> APIs <span class="light">?</span></h2>
 	</section>
 
 	<section class="slide white">
@@ -48,13 +56,13 @@
 	</section>
 
 	<section class="slide white">
-		<h2>How does JavaScript actually work?</h2>
-		<img src="./media/js.png" style="margin: auto; display: block; width: 800px;">
+		<h2>JavaScript runtime</h2>
+		<img src="./media/js_runtime.png" style="margin: 80px auto; display: block; width: 433px;">
 	</section>
 
 	<section class="slide white">
-		<h2>JavaScript runtime</h2>
-		<img src="./media/js_runtime.png" style="margin: 80px auto; display: block; width: 433px;">
+		<h2>How does JavaScript actually work?</h2>
+		<img src="./media/js.png" style="margin: auto; display: block; width: 800px;">
 	</section>
 
 	<section class="slide white">
@@ -74,7 +82,7 @@
 					</div>
 					<div>						
 						<code>function square(n) {</code>
-						<code>	return n * n;</code>
+						<code>	return multiply(n * n);</code>
 						<code>}</code>
 					</div>
 					<div>					
@@ -112,7 +120,7 @@
 					</div>
 					<div>						
 						<code>function square(n) {</code>
-						<code>	return n * n;</code>
+						<code>	return multiply(n * n);</code>
 						<code>}</code>
 					</div>
 					<div class="processing-code">					
@@ -153,7 +161,7 @@
 					</div>
 					<div class="processing-code">
 						<code>function square(n) {</code>
-						<code>	return n * n;</code>
+						<code>	return multiply(n * n);</code>
 						<code>}</code>
 					</div>
 					<div class="processing-code">					
@@ -197,7 +205,7 @@
 					</div>
 					<div class="processing-code">
 						<code>function square(n) {</code>
-						<code>	return n * n;</code>
+						<code>	return multiply(n * n);</code>
 						<code>}</code>
 					</div>
 					<div class="processing-code">					
@@ -244,7 +252,7 @@
 					</div>
 					<div class="processing-code">
 						<code>function square(n) {</code>
-						<code>	return n * n;</code>
+						<code>	return multiply(n * n);</code>
 						<code>}</code>
 					</div>
 					<div class="processing-code">					
@@ -288,7 +296,7 @@
 					</div>
 					<div>						
 						<code>function square(n) {</code>
-						<code>	return n * n;</code>
+						<code>	return multiply(n * n);</code>
 						<code>}</code>
 					</div>
 					<div class="processing-code">					
@@ -329,7 +337,7 @@
 					</div>
 					<div>						
 						<code>function square(n) {</code>
-						<code>	return n * n;</code>
+						<code>	return multiply(n * n);</code>
 						<code>}</code>
 					</div>
 					<div class="processing-code">					
@@ -373,7 +381,7 @@
 					</div>
 					<div>						
 						<code>function square(n) {</code>
-						<code>	return n * n;</code>
+						<code>	return multiply(n * n);</code>
 						<code>}</code>
 					</div>
 					<div class="processing-code">					
@@ -414,7 +422,7 @@
 					</div>
 					<div>						
 						<code>function square(n) {</code>
-						<code>	return n * n;</code>
+						<code>	return multiply(n * n);</code>
 						<code>}</code>
 					</div>
 					<div>					
@@ -452,7 +460,7 @@
 					</div>
 					<div>						
 						<code>function square(n) {</code>
-						<code>	return n * n;</code>
+						<code>	return multiply(n * n);</code>
 						<code>}</code>
 					</div>
 					<div>					
@@ -717,6 +725,50 @@
 	</section>
 
 	<section class="slide white">
+		<img src="./media/fox-suspicious.jpg" class="cover w" alt="">
+	</section>
+
+	<section class="slide white">
+		<h2 class="shout middle">If generator functions <br />return Iterators...</h2>
+	</section>
+
+	<section class="slide white">
+		<h2 class="shout middle">...why are they called <br />generator functions?</h2>
+	</section>
+
+	<section class="slide white">
+		<h2 class="shout middle">Iterator + Observer = Generator</h2>
+	</section>
+
+	<section class="slide white gen">
+		<h2>Generator as Iterator (Pull)</h2>
+		<div>
+			<p>yield value</p>
+			<p>throw an error</p>
+			<p>return value</p>
+		</div>
+		<div>
+			<p>generator<span class="hljs-keyword">.next()</span>.value</p>
+			<p><span class="hljs-keyword">try</span> { generator<span class="hljs-keyword">.next()</span>.value } <span class="hljs-keyword">catch</span> (err){}</p>
+			<p>generator<span class="hljs-keyword">.next()</span>.done</p>
+		</div>
+	</section>
+
+	<section class="slide white gen">
+		<h2>Generator as Observer (Push)</h2>
+		<div>
+			<p>receive data</p>
+			<p>receive an error</p>
+			<p>receive return value</p>
+		</div>
+		<div>
+			<p>generator<span class="hljs-keyword">.next(5)</span></p>
+			<p>generator<span class="hljs-keyword">.throw('fail')</span></p>
+			<p>generator<span class="hljs-keyword">.return(5)</span></p>
+		</div>
+	</section>
+
+	<section class="slide white">
 		<h2>Coroutines</h2>
 		<pre>
 			<code>co(<mark>function*</mark> () {</code>
@@ -802,14 +854,6 @@
 			<code>  console.log(company);</code>
 			<code>}</code>
 		</pre>
-	</section>
-
-	<section class="slide white">
-		<h2 class="shout" style="font-size: 100px">Stop!</h2>
-	</section>
-	
-	<section class="slide white">
-		<img src="./media/fox-suspicious.jpg" class="cover w" alt="">
 	</section>
 
 	<section class="slide white">
