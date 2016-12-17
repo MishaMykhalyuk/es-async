@@ -839,17 +839,17 @@
 		</p>
 	</section> 
 
-	<section class="slide white">
+<!-- 	<section class="slide white">
 		<h2>Coroutines</h2>
 		<pre>
 			<code>co(<mark>function*</mark> () {</code>
-			<code>  const str = <mark>yield</mark> read(‘secret-passwords.txt’);</code>
+			<code>  let str = <mark>yield</mark> read(‘secret-passwords.txt’);</code>
 			<code>  str = str.replace(‘qwerty’, ‘123456’);</code>
 			<code>  <mark>yield</mark> write(‘new-passwords.txt’, str);</code>
 			<code>})</code>
 			<code>.catch(err => handleError(err));</code>
 		</pre>
-	</section>
+	</section> -->
 
 	<section class="slide white">
 		<h2>Coroutines</h2>
@@ -876,7 +876,7 @@
 	<section class="slide white">
 		<pre>
 			<code><mark>async</mark> function () {</code>
-			<code>  const str = <mark>await</mark> read(‘secret-passwords.txt’);</code>
+			<code>  let str = <mark>await</mark> read(‘secret-passwords.txt’);</code>
 			<code>  str = str.replace(‘qwerty’, ‘123456’);</code>
 			<code>  <mark>await</mark> write(‘new-passwords.txt’, str);</code>
 			<code>};</code>
@@ -900,7 +900,7 @@
 		<pre>
 			<code><mark>async</mark> function () {</code>
 			<code>  try {</code>
-			<code>    const str = <mark>await</mark> read(‘secret-passwords.txt’);</code>
+			<code>    let str = <mark>await</mark> read(‘secret-passwords.txt’);</code>
 			<code>    str = str.replace(‘qwerty’, ‘123456’);</code>
 			<code>    <mark>await</mark> write(‘new-passwords.txt’, str);</code>
 			<code>  } catch (error) {</code>
