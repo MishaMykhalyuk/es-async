@@ -834,6 +834,13 @@
 
 	<section class="slide white">
 		<h2>Coroutines</h2>
+
+		<p>Coroutines are computer program components with <mark>multiple entry points</mark> for suspending and resuming execution at certain locations.
+		</p>
+	</section> 
+
+	<section class="slide white">
+		<h2>Coroutines</h2>
 		<pre>
 			<code>co(<mark>function*</mark> () {</code>
 			<code>  const str = <mark>yield</mark> read(‘secret-passwords.txt’);</code>
@@ -873,6 +880,15 @@
 			<code>  str = str.replace(‘qwerty’, ‘123456’);</code>
 			<code>  <mark>await</mark> write(‘new-passwords.txt’, str);</code>
 			<code>};</code>
+		</pre>
+	</section>
+
+	<section class="slide white">
+		<pre>
+			<code><mark>async</mark> function unicorn() {</code>
+			<code>  let rainbow = <mark>await</mark> getRainbow();</code>
+			<code>  return rainbow;</code>
+			<code>}</code>
 		</pre>
 	</section>
 
