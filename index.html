@@ -641,6 +641,21 @@
 		<h2 class="shout">Promises</h2>
 	</section>
 
+	<section class="slide white">
+		<pre>
+			<code>createUser(name)  </code>
+			<code>  <span class="hljs-keyword">.then</span>(getFriends)</code>
+			<code>  <span class="hljs-keyword">.then</span>(function (friends) {</code>
+			<code>    if (friends) {</code>
+			<code>      return invite(friends);</code>
+			<code>    } else {</code>
+			<code>      throw new Error('No friends to invite');</code>
+			<code>    }</code>
+			<code>  })</code>
+			<code>  <span class="hljs-keyword">.catch</span>(displayError);</code>
+		</pre>
+	</section>
+
 <!-- 	<section class="slide white">
 		<div class="justify-double code-style">
 		<div>
@@ -749,7 +764,7 @@
 	</section>
 
 	<section class="slide white">
-		<h2>Symbol.iterator</h2>
+		<h2>Iterator</h2>
 		<pre>
 			<code>const { value, done } = syncIterator.next();</code>
 		</pre>
@@ -814,6 +829,10 @@
 	</section>
 
 	<section class="slide white">
+		<img src="./media/conversation.png" style="margin: 60px auto; display: block; width: 500px;">
+	</section>
+
+	<section class="slide white">
 		<h2>Coroutines</h2>
 		<pre>
 			<code>co(<mark>function*</mark> () {</code>
@@ -825,7 +844,7 @@
 		</pre>
 	</section>
 
-<!-- 	<section class="slide white">
+	<section class="slide white">
 		<h2>Coroutines</h2>
 		<pre>
 			<code>co(function*() {</code>
@@ -837,7 +856,7 @@
 			<code>})</code>
 			<code>.catch(err => handleError(err))</code>
 		</pre>
-	</section> -->
+	</section>
 
 	<section class="slide white">
 		<h2 class="shout" style="font-size: 120px">ECMAScript 20<mark style="padding: 0 10px;">XX</mark></h2>
@@ -880,7 +899,7 @@
 	</section>
 
 	<section class="slide white">
-		<h2>Symbol.asyncIterator</h2>
+		<h2>AsyncIterator</h2>
 		<pre>
 			<code>asyncIterator.next()</code>
 			<code>  .then(({ value, done }) => /* ... */);</code>
@@ -889,7 +908,7 @@
 
 	<section class="slide white">
 		<pre>
-			<code><mark>async</mark> function* getCompanies() {</code>
+			<code><mark>async</mark> function<mark>*</mark> getCompanies() {</code>
 			<code>  for (let name of ['Foo', 'Bar', 'Baz']) {</code>
 			<code>    const profile = <mark>await</mark> get(`/users/${name}`);</code>
 			<code>    <mark>yield</mark> profile.company;</code>
