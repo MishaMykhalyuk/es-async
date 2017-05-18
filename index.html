@@ -47,10 +47,10 @@
 		<img src="./media/js_runtime.png" style="margin: 80px auto; display: block; width: 433px;">
 	</section>
 
-	<section class="slide white">
+	<!--<section class="slide white">
 		<h2>How does JavaScript actually work?</h2>
 		<img src="./media/js.png" style="margin: auto; display: block; width: 800px;">
-	</section>
+	</section>-->
 
 	<section class="slide white">
 		<h2>Call stack</h2>
@@ -61,7 +61,7 @@
 		<h2>Call stack</h2>
 		<div class="justify-double">
 			<div class="code">
-				<pre>
+				<pre class="code">
 					<div>					
 						<code>function multiply(a, b) {</code>
 						<code>	return a * b;</code>
@@ -610,6 +610,26 @@
 	</section>
 
 	<section class="slide white">
+		<h2>Synchronous execution</h2>
+		<img src="./media/sync.png" style="margin: auto; display: block; width: 800px;">
+	</section>
+
+	<section class="slide white">
+		<h2>Asynchronous execution</h2>
+		<img src="./media/async.png" style="margin: auto; display: block; width: 800px;">
+	</section>
+
+	<section class="slide white">
+		<h2>Synchronous execution</h2>
+		<img src="./media/sync-less.png" style="margin: auto; display: block; width: 800px;">
+	</section>
+
+	<section class="slide white">
+		<h2>Asynchronous execution</h2>
+		<img src="./media/async-less.png" style="margin: auto; display: block; width: 800px;">
+	</section>
+
+	<section class="slide white">
 		<h2 class="shout middle">Asynchronous programming is hard</h2>
 	</section>
 	
@@ -649,10 +669,20 @@
 	</section>
 
 	<section class="slide white">
-		<h2 class="shout middle">Callbacks</h2>
+		<h2 class="shout">Callbacks</h2>
 	</section>
 
 	<section class="slide white">
+		<h2>Continuation-passing style</h2>
+		<pre class="code">
+			<code>downloadPhoto('http://coolcats.com/cat.gif', function (photo) {</code>
+			<code>  console.log('Download finished', photo)</code>
+			<code>})</code>
+		</pre>
+	</section>
+	
+	<section class="slide white">
+		<h2>Continuation-passing style</h2>
 		<pre class="code">
 			<code>downloadPhoto('http://coolcats.com/cat.gif', handlePhoto)</code>
 			<code>function handlePhoto (error, photo) {</code>
@@ -697,11 +727,33 @@
 		<ul>
 			<li>Promise.prototype.then()</li>
 			<li>Promise.prototype.catch()</li>
+			<li>Promise.resolve()</li>
+			<li>Promise.reject()</li>
 			<li>Promise.all()</li>
 			<li>Promise.race()</li>
-			<li>Promise.reject()</li>
-			<li>Promise.resolve()</li>
 		</ul>
+	</section>
+
+	<section class="slide white">
+		<h2>Promise.prototype.then()</h2>
+		<pre>
+			<code>p.then(onFulfilled, onRejected);</code>
+			<code>p.then(function(value) {</code>
+			<code>  // fulfillment</code>
+			<code>}, function(reason) {</code>
+			<code>  // rejection</code>
+			<code>});</code>
+		</pre>
+	</section>
+
+	<section class="slide white">
+		<h2>Promise.prototype.catch()</h2>
+		<pre>
+			<code>p.catch(onRejected);</code>
+			<code>p.catch(function(reason) {</code>
+			<code>  // rejection</code>
+			<code>});</code>
+		</pre>
 	</section>
 
 	<section class="slide white">
@@ -805,9 +857,9 @@
 			<code>});</code>
 			<code>Promise.race([p1, p2])</code>
 			<code>  .then(function(value) {</code>
-			<code>  <mark class="comment">// Not called</mark></code>
+			<code>    <mark class="comment">// Not called</mark></code>
 			<code>}, function(reason) {</code>
-			<code><mark class="comment">    // p2 is faster, so it rejects</mark></code>
+			<code>    <mark class="comment">// p2 is faster, so it rejects</mark></code>
 			<code>});</code>
 		</pre>
 	</section>
@@ -935,13 +987,6 @@
 	</section>
 
 	<section class="slide white">
-		<h2>Iterator</h2>
-		<pre>
-			<code>const { value, done } = syncIterator.next();</code>
-		</pre>
-	</section>
-
-	<section class="slide white">
 		<pre>
 			<code>function* numbers() {</code>
 			<code>  yield 1;</code>
@@ -953,54 +998,6 @@
 			<code class="next">iterator.next(); <mark class="comment">// {value: 2, done: false}</mark></code>
 			<code class="next">iterator.next(); <mark class="comment">// {value: 3, done: true}</mark></code>
 		</pre>
-	</section>
-
-	<section class="slide white">
-		<img src="./media/fox-suspicious.jpg" class="cover w" alt="">
-	</section>
-
-	<section class="slide white">
-		<h2 class="shout middle">If generator functions <br />return Iterators...</h2>
-	</section>
-
-	<section class="slide white">
-		<h2 class="shout middle">...why are they called <br />generator functions?</h2>
-	</section>
-
-	<section class="slide white">
-		<h2 class="shout middle">Iterator + Observer = Generator</h2>
-	</section>
-
-	<section class="slide white gen">
-		<h2>Generator as Iterator (Pull)</h2>
-		<div>
-			<p>yield value</p>
-			<p>throw an error</p>
-			<p>return value</p>
-		</div>
-		<div>
-			<p>generator<span class="hljs-keyword">.next()</span>.value</p>
-			<p><span class="hljs-keyword">try</span> { generator<span class="hljs-keyword">.next()</span>.value } <span class="hljs-keyword">catch</span> (err){}</p>
-			<p>generator<span class="hljs-keyword">.next()</span>.done</p>
-		</div>
-	</section>
-
-	<section class="slide white gen">
-		<h2>Generator as Observer (Push)</h2>
-		<div>
-			<p>receive data</p>
-			<p>receive an error</p>
-			<p>receive return value</p>
-		</div>
-		<div>
-			<p>generator<span class="hljs-keyword">.next(5)</span></p>
-			<p>generator<span class="hljs-keyword">.throw('fail')</span></p>
-			<p>generator<span class="hljs-keyword">.return(5)</span></p>
-		</div>
-	</section>
-
-	<section class="slide white">
-		<img src="./media/conversation.png" style="margin: 60px auto; display: block; width: 500px;">
 	</section>
 
 	<section class="slide white">
@@ -1082,72 +1079,10 @@
 	</section>
 
 	<section class="slide white">
-		<pre>
-			<code>[1, 2, 3, 4]</code>
-			<code>  <span class="hljs-keyword">.map</span>(n => n * 3)</code>
-			<code>  <span class="hljs-keyword">.filter</span>(n => n < 10)</code>
-		</pre>
-	</section>
-
-	<section class="slide white">
-		<h2 class="shout">async iteration</h2>
-	</section>
-
-	<section class="slide white">
-		<h2>AsyncIterator</h2>
-		<pre>
-			<code>asyncIterator.next()</code>
-			<code>  .then(({ value, done }) => /* ... */);</code>
-		</pre>
-	</section>
-
-	<section class="slide white">
-		<pre>
-			<code><mark>async</mark> function<mark>*</mark> getCompanies() {</code>
-			<code>  for (let name of ['Foo', 'Bar', 'Baz']) {</code>
-			<code>    const profile = <mark>await</mark> get(`/users/${name}`);</code>
-			<code>    <mark>yield</mark> profile.company;</code>
-			<code>  }</code>
-			<code>}</code>
-			<code><mark>for await</mark> (let company of getCompanies()) {</code>
-			<code>  console.log(company);</code>
-			<code>}</code>
-		</pre>
-	</section>
-
-	<section class="slide white">
-		<h2 class="shout" style="font-size: 100px">ECMAScript Observable</h2>
-	</section>
-
-	<section class="slide white">
-		<pre>
-			<code>function listen (element, eventName) {</code>
-			<code>  return new <mark>Observable</mark> (observer => {</code>
-			<code>      const handler = event => observer.next(event);</code>
-			<code>      element.addEventListener(eventName, handler);</code>
-			<code>      return () => {</code>
-			<code>          element.removeEventListener(eventName, handler);</code>
-			<code>      };</code>
-			<code>  });</code>
-			<code>}</code>
-		</pre>
-	</section>
-
-	<section class="slide white">
-		<pre>
-			<code>function keyEventsStream (element) {</code>
-			<code>  return listen(element, 'keydown')</code>
-			<code>    <span class="hljs-keyword">.filter</span>(event => {...})</code>
-			<code>    <span class="hljs-keyword">.map</span>(event => {...})</code>
-			<code>}</code>
-
-			<code><span class="hljs-keyword">const</span> subscription = keyEventsStream(inputElement)</code>
-			<code>  <span class="hljs-keyword">.subscribe</span>({</code>
-			<code>    <span class="hljs-keyword">next</span>(val) {...},</code>
-			<code>    <span class="hljs-keyword">error</span>(err) {...},</code>
-			<code>    <span class="hljs-keyword">complete</span>() {...}</code>
-			<code>  });</code>
-		</pre>
+		<h2>Завдання</h2>
+		<ul>
+			<li>Написати функцію <mark>delay(ms)</mark>, яка повертає проміс, що переходить в стан "resolved" через <mark>ms</mark> мс.</li>
+		</ul>
 	</section>
 
 	<section class="slide white">

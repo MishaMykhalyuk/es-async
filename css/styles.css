@@ -47,7 +47,8 @@ section.slide{
 	justify-content: space-between;
 }
 
-.slide pre.code code{
+.slide pre.code code,
+.slide .code code{
 	font-size: 22px;
 	line-height: 40px;
 }
