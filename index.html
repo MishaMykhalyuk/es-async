@@ -1078,11 +1078,41 @@
 		</pre>
 	</section>
 
-	<section class="slide white">
-		<h2>Завдання</h2>
-		<ul>
-			<li>Написати функцію <mark>delay(ms)</mark>, яка повертає проміс, що переходить в стан "resolved" через <mark>ms</mark> мс.</li>
-		</ul>
+	<section class="slide white" id="task">
+		<p>
+			1) Реалізувати функцію <b>fetchJSON( path, callback )</b>, де: <br />
+			<span style="margin-left: 20px;"><mark>path</mark> - шлях до файлу <br /></span>
+			<span style="margin-left: 20px;"><mark>callback</mark> - функція, яка викликається із результатом Ajax запиту на <mark>path</mark></span>
+		</p>
+		<p>
+			2) Використовуючи функцію <b>fetchJSON</b>, завантажити два файла: <br />
+			<span style="margin-left: 20px;">http://192.168.0.101:8080/users.json</span> <br />
+			<span style="margin-left: 20px;">http://192.168.0.101:8080/projects.json</span>
+		</p>
+		<p>
+			3) Використовуючи дані з файлів, свторити наступну структуру данних:
+			<pre>
+				<code>{</code>
+				<code>	users: [</code>
+				<code>		{</code>
+				<code>			name: "Wayne",</code>
+				<code>			projects: [</code>
+				<code>				{</code>
+				<code>					name: "Cobalt",</code>
+				<code>					description: "Your driver license to HTML5 world!"</code>
+				<code>				}</code>
+				<code>				...</code>
+				<code>			]</code>
+				<code>		}</code>
+				<code>		...</code>
+				<code>	]</code>
+				<code>}</code>
+			</pre>
+		</p>
+		<p>
+			4) Привести функцію <b>fetchJSON</b> до інтерфейсу <b>Promise</b>. <br />
+			5) Повторити кроки 2 та 3 використовуючи <b>Promise</b> API та <b>async/await</b>.
+		</p>
 	</section>
 
 	<section class="slide white">

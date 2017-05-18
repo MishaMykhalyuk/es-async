@@ -1,3 +1,15 @@
+#task pre{
+	margin-bottom: 0;
+}
+#task p{
+	font-size: 18px;
+	margin-bottom: 0;
+}
+#task code{
+	font-size: 14px;
+    line-height: 17px;
+}
+
 section.slide{
 	padding-top: 50px;
 }
