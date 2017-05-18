@@ -597,19 +597,6 @@
 	</section>
 
 	<section class="slide white">
-		<h2 class="shout middle">Asynchronous programming is hard</h2>
-	</section>
-	
-	<section class="slide white">
-		<h2>Synchronous way</h2>
-		<pre>
-			<code>first()</code>
-			<code>second()</code>
-			<code>last()</code>
-		</pre>
-	</section>
-
-	<section class="slide white">
 		<h2 class="shout middle">How is JavaScript asynchronous <mark>and</mark> single threaded?</h2>
 	</section>
 
@@ -622,7 +609,27 @@
 		<img src="./media/js.png" style="margin: auto; display: block; width: 800px;">
 	</section>
 
-	<section class="slide white loupe">
+	<section class="slide white">
+		<h2 class="shout middle">Asynchronous programming is hard</h2>
+	</section>
+	
+	<section class="slide white">
+		<h2>Synchronous way</h2>
+		<pre>
+			<code>var result = multiplyTwoNumbers(5, 10)</code>
+			<code>console.log(result) <mark class="comment">// 50 gets printed out</mark></code>
+		</pre>
+	</section>
+
+	<section class="slide white">
+		<h2>Asynchronous way</h2>
+		<pre>
+			<code>var photo = downloadPhoto('http://coolcats.com/cat.gif')</code>
+			<code><mark class="comment">// photo is 'undefined'!</mark></code>
+		</pre>
+	</section>
+
+	<!--<section class="slide white loupe">
 		<img src="./media/loupe_1-0.png" alt="">
 		<img src="./media/loupe_1.gif" class="next def">
 	</section>
@@ -635,10 +642,29 @@
 	<section class="slide white loupe">
 		<img src="./media/async_loop-0.png" alt="">
 		<img class="next def" src="./media/async_loop.gif">
-	</section>
+	</section>-->
 
 	<section class="slide white">
 		<h2 class="shout middle">How do we do it?</h2>
+	</section>
+
+	<section class="slide white">
+		<h2 class="shout middle">Callbacks</h2>
+	</section>
+
+	<section class="slide white">
+		<pre class="code">
+			<code>downloadPhoto('http://coolcats.com/cat.gif', handlePhoto)</code>
+			<code>function handlePhoto (error, photo) {</code>
+			<code>  if (error) { </code>
+			<code>    console.error('Download error!', error)</code>
+			<code>  }</code>
+			<code>  else { </code>
+			<code>    console.log('Download finished', photo)</code>
+			<code>  }</code>
+			<code>}</code>
+			<code>console.log('Download started')</code>
+		</pre>
 	</section>
 
 	<section class="slide white">
@@ -651,6 +677,142 @@
 	</section>
 
 	<section class="slide white">
+		<h2>States</h2>
+		<ul>
+			<li><mark>Pending</mark> - initial state, not fulfilled or rejected.</li>
+			<li><mark>Fulfilled</mark> - meaning that the operation completed successfully.</li>
+			<li><mark>Rejected</mark> - meaning that the operation failed.</li>
+		</ul>
+	</section>
+
+	<section class="slide white">
+		<h2>Syntax</h2>
+		<pre>
+			<code>new Promise(function(resolve, reject) { ... } );</code>
+		</pre>
+	</section>
+
+	<section class="slide white">
+		<h2>API</h2>
+		<ul>
+			<li>Promise.prototype.then()</li>
+			<li>Promise.prototype.catch()</li>
+			<li>Promise.all()</li>
+			<li>Promise.race()</li>
+			<li>Promise.reject()</li>
+			<li>Promise.resolve()</li>
+		</ul>
+	</section>
+
+	<section class="slide white">
+		<h2>Promis.resolve</h2>
+		<pre class="code">
+			<code>Promise.resolve('Success')</code>
+			<code>	.then(function(value) {</code>
+			<code>	  console.log(value); <mark class="comment">// "Success"</mark></code>
+			<code>	}, function(value) {</code>
+			<code><span class="comment">      // not called</span></code>
+			<code>	});</code>
+		</pre>
+	</section>
+
+	<section class="slide white">
+		<h2>Promis.resolve</h2>
+		<pre class="code">
+			<code>var original = Promise.resolve(true);</code>
+			<code>var cast = Promise.resolve(original);</code>
+			<code>cast.then(function(v) {</code>
+			<code>	console.log(v); // true</code>
+			<code>});</code>
+		</pre>
+	</section>
+
+	<section class="slide white">
+		<h2>Promis.resolve</h2>
+		<pre class="code">
+			<code>var p1 = Promise.resolve({ </code>
+			<code>	then: function(onFulfill, onReject) { onFulfill('fulfilled!'); }</code>
+			<code>});</code>
+			<code>console.log(p1 instanceof Promise) <mark class="comment">// true</mark></code>
+			<code>p1.then(function(v) {</code>
+			<code>	console.log(v); // "fulfilled!"</code>
+			<code>}, function(e) {</code>
+			<code>	// not called</code>
+			<code>});</code>
+		</pre>
+	</section>
+
+	<section class="slide white">
+		<h2>Promis.all</h2>
+		<pre class="code">
+			<code>Promise.all([</code>
+			<code>	asyncFunc1(),</code>
+			<code>	asyncFunc2(),</code>
+			<code>])</code>
+			<code>.then(([result1, result2]) => {</code>
+			<code>	···</code>
+			<code>})</code>
+			<code>.catch(err => {</code>
+			<code>	// Receives first rejection among the Promises</code>
+			<code>	···</code>
+			<code>});</code>
+		</pre>
+	</section>
+
+	<section class="slide white">
+		<h2>Promise.race</h2>
+		<pre class="code">
+			<code>var p1 = new Promise(function(resolve, reject) { </code>
+			<code>	setTimeout(resolve, 500, "one"); </code>
+			<code>});</code>
+			<code>var p2 = new Promise(function(resolve, reject) { </code>
+			<code>	setTimeout(resolve, 100, "two"); </code>
+			<code>});</code>
+			<code>Promise.race([p1, p2])</code>
+			<code>  .then(function(value) {</code>
+			<code>    console.log(value); <mark class="comment">// "two"</mark></code>
+			<code>    // Both resolve, but p2 is faster</code>
+			<code>})</code>
+		</pre>
+	</section>
+
+	<section class="slide white">
+		<h2>Promise.race</h2>
+		<pre class="code">
+			<code>var p1 = new Promise(function(resolve, reject) { </code>
+			<code>	setTimeout(resolve, 100, "one"); </code>
+			<code>});</code>
+			<code>var p2 = new Promise(function(resolve, reject) { </code>
+			<code>	setTimeout(reject, 500, "two"); </code>
+			<code>});</code>
+			<code>Promise.race([p1, p2])</code>
+			<code>  .then(function(value) {</code>
+			<code>    // p1 is faster, so it resolves</code>
+			<code>}, function(reason) {</code>
+			<code>  // Not called</code>
+			<code>});</code>
+		</pre>
+	</section>
+
+	<section class="slide white">
+		<h2>Promise.race</h2>
+		<pre class="code">
+			<code>var p1 = new Promise(function(resolve, reject) { </code>
+			<code>	setTimeout(resolve, 500, "one"); </code>
+			<code>});</code>
+			<code>var p2 = new Promise(function(resolve, reject) { </code>
+			<code>	setTimeout(reject, 100, "two"); </code>
+			<code>});</code>
+			<code>Promise.race([p1, p2])</code>
+			<code>  .then(function(value) {</code>
+			<code>  <mark class="comment">// Not called</mark></code>
+			<code>}, function(reason) {</code>
+			<code><mark class="comment">    // p2 is faster, so it rejects</mark></code>
+			<code>});</code>
+		</pre>
+	</section>
+
+	<!--<section class="slide white">
 		<pre>
 			<code>createUser(name)  </code>
 			<code>  <span class="hljs-keyword">.then</span>(getFriends)</code>
@@ -663,7 +825,7 @@
 			<code>  })</code>
 			<code>  <span class="hljs-keyword">.catch</span>(displayError);</code>
 		</pre>
-	</section>
+	</section>-->
 
 <!-- 	<section class="slide white">
 		<div class="justify-double code-style">
@@ -699,7 +861,7 @@
 		</div>
 	</section> -->
 
-	<section class="slide white">
+	<!--<section class="slide white">
 		<pre>
 			<code>get('/resources', (resources) => {</code>
 			<code>  renderResources(resources);</code>
@@ -742,7 +904,7 @@
 			<code>    })</code>
 			<code>}</code>
 		</pre>
-	</section>
+	</section>-->
 
 	<section class="slide white">
 		<h2>Promise chaining</h2>
