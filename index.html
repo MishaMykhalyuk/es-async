@@ -610,6 +610,12 @@
 	</section>
 
 	<section class="slide white">
+		<h2 class="shout"><a href="http://latentflip.com/loupe" target="_blank">Demo</a></h2>
+	</section>
+		
+	</section>
+
+	<section class="slide white">
 		<h2>Synchronous execution</h2>
 		<img src="./media/sync.png" style="margin: auto; display: block; width: 800px;">
 	</section>
@@ -737,7 +743,7 @@
 	<section class="slide white">
 		<h2>Promise.prototype.then()</h2>
 		<pre>
-			<code>p.then(onFulfilled, onRejected);</code>
+			<code>const p = new Promise(function(resolve, reject) { ... } );</code>
 			<code>p.then(function(value) {</code>
 			<code>  // fulfillment</code>
 			<code>}, function(reason) {</code>
@@ -749,7 +755,7 @@
 	<section class="slide white">
 		<h2>Promise.prototype.catch()</h2>
 		<pre>
-			<code>p.catch(onRejected);</code>
+			<code>const p = new Promise(function(resolve, reject) { ... } );</code>
 			<code>p.catch(function(reason) {</code>
 			<code>  // rejection</code>
 			<code>});</code>
