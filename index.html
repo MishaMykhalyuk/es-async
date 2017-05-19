@@ -870,100 +870,6 @@
 		</pre>
 	</section>
 
-	<!--<section class="slide white">
-		<pre>
-			<code>createUser(name)  </code>
-			<code>  <span class="hljs-keyword">.then</span>(getFriends)</code>
-			<code>  <span class="hljs-keyword">.then</span>(function (friends) {</code>
-			<code>    if (friends) {</code>
-			<code>      return invite(friends);</code>
-			<code>    } else {</code>
-			<code>      throw new Error('No friends to invite');</code>
-			<code>    }</code>
-			<code>  })</code>
-			<code>  <span class="hljs-keyword">.catch</span>(displayError);</code>
-		</pre>
-	</section>-->
-
-<!-- 	<section class="slide white">
-		<div class="justify-double code-style">
-		<div>
-			<p>Callback</p>			
-			<pre>
-				<code>createUser(name, function () {  </code>
-				<code> getFriends(name, function (friends) {</code>
-				<code>  if (friends) {</code>
-				<code>   invite(friends, function (invites) {</code>
-				<code>    // ad infinitum</code>
-				<code>   });</code>
-				<code>  };</code>
-				<code> });</code>
-				<code>});</code>
-			</pre>
-		</div>
-		<div>
-			<p>Promise</p>
-			<pre>
-				<code>createUser(name)  </code>
-				<code>  <span class="hljs-keyword">.then</span>(getFriends)</code>
-				<code>  <span class="hljs-keyword">.then</span>(function (friends) {</code>
-				<code>    if (friends) {</code>
-				<code>      return invite(friends);</code>
-				<code>    } else {</code>
-				<code>      throw new Error('No friends to invite');</code>
-				<code>    }</code>
-				<code>  })</code>
-				<code>  <span class="hljs-keyword">.catch</span>(displayError);</code>
-			</pre>
-		</div>
-		</div>
-	</section> -->
-
-	<!--<section class="slide white">
-		<pre>
-			<code>get('/resources', (resources) => {</code>
-			<code>  renderResources(resources);</code>
-			<code>});</code>
-		</pre>
-
-		<pre>
-			<code>get('/resources')<mark>.then(</mark>(resources) => {</code>
-			<code>  renderResources(resources);</code>
-			<code>});</code>
-		</pre>
-	</section>
-
-	<section class="slide white">
-		<h2 class="shout middle">New syntax</h2>
-	</section>
-
-	<section class="slide white">
-		<pre>
-			<code>function main() {</code>
-			<code>  try {</code>
-			<code>    let <mark>resources</mark> = getResources();</code>
-			<code>    render(resources);</code>
-			<code>  } catch (<mark>error</mark>) {</code>
-			<code>  <mark class="comment">  // wow</mark></code>
-			<code>  }</code>
-			<code>}</code>
-		</pre>
-	</section>
-
-	<section class="slide white">
-		<pre>
-			<code>function main() {</code>
-			<code>  getResources()</code>
-			<code>    .then((<mark>resources</mark>) => {</code>
-			<code>      render(resources);</code>
-			<code>    })</code>
-			<code>    .catch((<mark>error</mark>) => {</code>
-			<code>  <mark class="comment">    // wow</mark></code>
-			<code>    })</code>
-			<code>}</code>
-		</pre>
-	</section>-->
-
 	<section class="slide white">
 		<h2>Promise chaining</h2>
 		<pre>
@@ -1025,7 +931,7 @@
 		</pre>
 	</section>
 
-<!-- 	<section class="slide white">
+ 	<section class="slide white">
 		<h2>Coroutines</h2>
 		<pre>
 			<code>co(function*() {</code>
@@ -1037,7 +943,7 @@
 			<code>})</code>
 			<code>.catch(err => handleError(err))</code>
 		</pre>
-	</section> -->
+	</section> 
 
 	<section class="slide white">
 		<h2 class="shout" style="font-size: 120px">ECMAScript 20<mark style="padding: 0 10px;">XX</mark></h2>
@@ -1085,19 +991,19 @@
 	</section>
 
 	<section class="slide white">
-		<h2 class="shout">Tasks</h2>
+		<h2 class="shout"><a href="http://plnkr.co/edit/hBVjmhid8wqSObML0uul?p=preview" target="_blank">Tasks</a></h2>
 	</section>
 
 	<section class="slide white" id="task">
 		<p>
-			1) Реалізувати функцію <b>fetchJSON( path, callback )</b>, де: <br />
+			1) Дана функція <b>fetchJSON( path, callback )</b>, де: <br />
 			<span style="margin-left: 20px;"><mark>path</mark> - шлях до файлу <br /></span>
 			<span style="margin-left: 20px;"><mark>callback</mark> - функція, яка викликається із результатом Ajax запиту на <mark>path</mark></span>
 		</p>
 		<p>
 			2) Використовуючи функцію <b>fetchJSON</b>, завантажити два файла: <br />
-			<span style="margin-left: 20px;">http://192.168.0.101:8080/users.json</span> <br />
-			<span style="margin-left: 20px;">http://192.168.0.101:8080/projects.json</span>
+			<span style="margin-left: 20px;">users.json</span> <br />
+			<span style="margin-left: 20px;">projects.json</span>
 		</p>
 		<p>
 			3) Використовуючи дані з файлів, свторити наступну структуру данних:
